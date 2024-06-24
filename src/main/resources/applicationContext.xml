@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <context:property-placeholder location="classpath:value"/>
+
+    <bean id="Human" class="org.example.Human">
+        <constructor-arg index="0" ref="Cat"/>
+        <constructor-arg index="1" ref="Dog"/>
+        <constructor-arg index="2" ref="Parrot1"/>
+        <constructor-arg index="3" ref="Parrot2"/>
+        <property name="name" value="${human.name}"/>
+    </bean>
+
+    <bean id="Dog" class="org.example.Dog">
+        <constructor-arg value="${dog.name}"/>
+    </bean>
+
+    <bean id="Cat" class="org.example.Cat">
+        <constructor-arg value="${cat.name}"/>
+    </bean>
+
+    <bean id="Parrot1" class="org.example.Parrot">
+        <constructor-arg value="${parrot1.name}"/>
+    </bean>
+
+    <bean id="Parrot2" class="org.example.Parrot">
+        <constructor-arg value="${parrot2.name}"/>
+    </bean>
+
+</beans>
