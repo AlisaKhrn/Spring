@@ -11,6 +11,10 @@ public class Human {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public Human(Pet cat, Pet dog, Pet parrot1, Pet parrot2){
         this.cat = cat;
         this.dog = dog;
